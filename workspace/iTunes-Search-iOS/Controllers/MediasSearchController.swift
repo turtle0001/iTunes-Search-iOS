@@ -1,23 +1,24 @@
 //
-//  MediasSearchController.swift
-//  iTunes-Search-iOS
+//  PodcastsSearchController.swift
+//  PodcastsCourseLBTA
 //
-//  Created by Joash Tubaga on 29/12/2018.
-//  Copyright © 2018 joashtubaga. All rights reserved.
+//  Created by Brian Voong on 2/14/18.
+//  Copyright © 2018 Brian Voong. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class MediasSearchController: UITableViewController,  UISearchBarDelegate{
-  let podcasts = [
-    PodcastModel(name: "Sample podcast 1", artistName: "Joash"),
-    PodcastModel(name: "Sample podcast 2", artistName: "Tubaga"),
+class MediasSearchController: UITableViewController, UISearchBarDelegate {
+  
+  var movies = [
+    MovieModel(trackName: "Sample movie 1", artistName: "Joash"),
+    MovieModel(trackName: "Sample movie 2", artistName: "Tubaga"),
     ]
   
   let cellId = "cellId"
   
-  // UISearchController Implementation
+  // lets implement a UISearchController
   let searchController = UISearchController(searchResultsController: nil)
   
   override func viewDidLoad() {
@@ -37,24 +38,35 @@ class MediasSearchController: UITableViewController,  UISearchBarDelegate{
   }
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //        print(searchText)
-    // later implement Alamofire to search iTunes API
+  
+    // Alamofire implementation to search iTunes API
     
+    let url = "https://itunes.apple.com/search"
+    let parameters = ["term": searchText, "media": "movie"]
     
-    let url = "https://itunes.apple.com/search?term=\(searchText)"
-    Alamofire.request(url).responseData { (dataResponse) in
+    Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseData { (dataResponse) in
+      
       if let err = dataResponse.error {
         print("Failed to contact yahoo", err)
         return
       }
       
       guard let data = dataResponse.data else { return }
-      let dummyString = String(data: data, encoding: .utf8)
-      print(dummyString ?? "")
+      do {
+        let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
+        self.movies = searchResult.results
+        self.tableView.reloadData()
+      } catch let decodeErr {
+        print("Failed to decode:", decodeErr)
+      }
+      
     }
   }
   
-
+  struct SearchResults: Decodable {
+    let resultCount: Int
+    let results: [MovieModel]
+  }
   
   fileprivate func setupTableView() {
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
@@ -63,17 +75,31 @@ class MediasSearchController: UITableViewController,  UISearchBarDelegate{
   //MARK:- UITableView
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return podcasts.count
+    return movies.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
     
-    let podcast = self.podcasts[indexPath.row]
-    cell.textLabel?.text = "\(podcast.name)\n\(podcast.artistName)"
+    let movie = self.movies[indexPath.row]
+    cell.textLabel?.text = "\(movie.trackName ?? "")\n\(movie.artistName ?? "")"
     cell.textLabel?.numberOfLines = -1
     cell.imageView?.image = #imageLiteral(resourceName: "appicon")
     
     return cell
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

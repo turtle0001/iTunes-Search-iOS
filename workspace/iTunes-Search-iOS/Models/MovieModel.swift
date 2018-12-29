@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct MovieModel: Decodable {
+  var trackName: String?
+  var artistName: String?
+}
