@@ -38,28 +38,10 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
   }
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-  
-    // Alamofire implementation to search iTunes API
-    
-    let url = "https://itunes.apple.com/search"
-    let parameters = ["term": searchText, "media": "movie"]
-    
-    Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseData { (dataResponse) in
+    APIService.shared.fetchMovies(searchText: searchText) { (movies) in
       
-      if let err = dataResponse.error {
-        print("Failed to contact yahoo", err)
-        return
-      }
-      
-      guard let data = dataResponse.data else { return }
-      do {
-        let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
-        self.movies = searchResult.results
-        self.tableView.reloadData()
-      } catch let decodeErr {
-        print("Failed to decode:", decodeErr)
-      }
-      
+      self.movies = movies
+      self.tableView.reloadData()
     }
   }
   
