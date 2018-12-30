@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MovieCell: UITableViewCell {
-
+  
   @IBOutlet weak var movieImageView: UIImageView!
   @IBOutlet weak var trackNameLabel: UILabel!
   @IBOutlet weak var genreNameLabel: UILabel!
@@ -17,16 +18,13 @@ class MovieCell: UITableViewCell {
   
   var movie: MovieModel! {
     didSet {
-      
       trackNameLabel.text = movie.trackName
       genreNameLabel.text = movie.primaryGenreName
+      priceLabel.text = "$\(movie.trackPrice ?? 0)"
       
-      if let price = movie?.trackPrice {
-        priceLabel.text =  "$\(price)"
-      } else {
-        priceLabel.text = ""
-      }
-
+      guard let url = URL(string: movie.artworkUrl100 ?? "") else { return }
+      // Handle the loading and caching of web images
+      movieImageView.sd_setImage(with: url, completed: nil)
       
     }
   }

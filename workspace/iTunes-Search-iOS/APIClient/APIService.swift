@@ -17,7 +17,7 @@ class APIService {
   static let shared = APIService()
   
   func fetchMovies(searchText: String, completionHandler: @escaping ([MovieModel]) -> ()) {
-    print("Searching for movies...")
+//    print("Searching for movies...")
     
     let parameters = ["term": searchText, "media": "movie"]
     
