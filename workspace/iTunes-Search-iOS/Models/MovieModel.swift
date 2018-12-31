@@ -13,5 +13,6 @@ struct MovieModel: Decodable {
   var primaryGenreName: String?
   var artworkUrl100: String?
   var trackPrice: Double?
+  var longDescription: String?
   
 }

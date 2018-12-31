@@ -53,7 +53,20 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
     tableView.register(nib, forCellReuseIdentifier: cellId)
   }
   
+  
   //MARK:- UITableView
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let movie = self.movies[indexPath.row]
+    
+    let window = UIApplication.shared.keyWindow
+    
+    let movieDetailsView = Bundle.main.loadNibNamed("MovieDetailsView", owner: self, options: nil)?.first as! MovieDetailsView
+    
+    movieDetailsView.movie = movie
+    
+    movieDetailsView.frame = self.view.frame
+    window?.addSubview(movieDetailsView)
+  }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return movies.count
