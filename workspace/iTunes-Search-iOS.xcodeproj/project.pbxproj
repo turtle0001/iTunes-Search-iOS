@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2ECE75B3A7FA25D39D5D4591 /* Pods_iTunes_Search_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C1F3E1907EAC8F2791D45 /* Pods_iTunes_Search_iOS.framework */; };
 		5A669D7121D730490021277D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A669D7021D730490021277D /* AppDelegate.swift */; };
-		5A669D7321D730490021277D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A669D7221D730490021277D /* ViewController.swift */; };
-		5A669D7621D730490021277D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A669D7421D730490021277D /* Main.storyboard */; };
 		5A669D7821D730490021277D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A669D7721D730490021277D /* Assets.xcassets */; };
 		5A669D7B21D730490021277D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A669D7921D730490021277D /* LaunchScreen.storyboard */; };
 		5A669D8321D73A940021277D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A669D8221D73A940021277D /* MainTabBarController.swift */; };
@@ -21,14 +19,17 @@
 		5A669D9A21D7EFE70021277D /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A669D9821D7EFE70021277D /* MovieCell.xib */; };
 		5A9E1C0021D9C9AD005468C5 /* MovieDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1BFF21D9C9AD005468C5 /* MovieDetailsView.xib */; };
 		5A9E1C0221D9D080005468C5 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0121D9D080005468C5 /* MovieDetailsView.swift */; };
+		5A9E1C0421DAA9E7005468C5 /* MoviesSearchingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0321DAA9E7005468C5 /* MoviesSearchingView.xib */; };
+		5A9E1C0621DB3A39005468C5 /* WatchlistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0521DB3A39005468C5 /* WatchlistController.swift */; };
+		5A9E1C0821DB4200005468C5 /* WatchlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0721DB4200005468C5 /* WatchlistCell.swift */; };
+		5A9E1C0B21DB5B2C005468C5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0A21DB5B2C005468C5 /* UserDefaults.swift */; };
+		5A9E1C0D21DBCF3A005468C5 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0C21DBCF3A005468C5 /* UIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23B0A62A35F4FAC64098F29D /* Pods-iTunes-Search-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes-Search-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes-Search-iOS/Pods-iTunes-Search-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5A669D6D21D730490021277D /* iTunes-Search-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes-Search-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A669D7021D730490021277D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A669D7221D730490021277D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5A669D7521D730490021277D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A669D7721D730490021277D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A669D7A21D730490021277D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A669D7C21D730490021277D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +41,11 @@
 		5A669D9821D7EFE70021277D /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		5A9E1BFF21D9C9AD005468C5 /* MovieDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsView.xib; sourceTree = "<group>"; };
 		5A9E1C0121D9D080005468C5 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		5A9E1C0321DAA9E7005468C5 /* MoviesSearchingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesSearchingView.xib; sourceTree = "<group>"; };
+		5A9E1C0521DB3A39005468C5 /* WatchlistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistController.swift; sourceTree = "<group>"; };
+		5A9E1C0721DB4200005468C5 /* WatchlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistCell.swift; sourceTree = "<group>"; };
+		5A9E1C0A21DB5B2C005468C5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		5A9E1C0C21DBCF3A005468C5 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		8C85C3F89C99A9E8E4F3D082 /* Pods-iTunes-Search-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes-Search-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes-Search-iOS/Pods-iTunes-Search-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DF0C1F3E1907EAC8F2791D45 /* Pods_iTunes_Search_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunes_Search_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +83,7 @@
 		5A669D6F21D730490021277D /* iTunes-Search-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				5A9E1C0921DB5B05005468C5 /* Helper */,
 				5A669D8C21D7B1630021277D /* APIClient */,
 				5A669D8721D742670021277D /* Models */,
 				5A669D9221D7E6F50021277D /* Views */,
@@ -91,7 +98,7 @@
 			children = (
 				5A669D8221D73A940021277D /* MainTabBarController.swift */,
 				5A669D8521D740B30021277D /* MediasSearchController.swift */,
-				5A669D7221D730490021277D /* ViewController.swift */,
+				5A9E1C0521DB3A39005468C5 /* WatchlistController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +126,8 @@
 				5A669D9721D7EFE70021277D /* MovieCell.swift */,
 				5A9E1BFF21D9C9AD005468C5 /* MovieDetailsView.xib */,
 				5A9E1C0121D9D080005468C5 /* MovieDetailsView.swift */,
+				5A9E1C0321DAA9E7005468C5 /* MoviesSearchingView.xib */,
+				5A9E1C0721DB4200005468C5 /* WatchlistCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,12 +136,20 @@
 			isa = PBXGroup;
 			children = (
 				5A669D7021D730490021277D /* AppDelegate.swift */,
-				5A669D7421D730490021277D /* Main.storyboard */,
 				5A669D7721D730490021277D /* Assets.xcassets */,
 				5A669D7921D730490021277D /* LaunchScreen.storyboard */,
 				5A669D7C21D730490021277D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5A9E1C0921DB5B05005468C5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1C0A21DB5B2C005468C5 /* UserDefaults.swift */,
+				5A9E1C0C21DBCF3A005468C5 /* UIApplication.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		A202C41AB99A2577720643EA /* Pods */ = {
@@ -216,7 +233,7 @@
 				5A669D7821D730490021277D /* Assets.xcassets in Resources */,
 				5A669D9A21D7EFE70021277D /* MovieCell.xib in Resources */,
 				5A9E1C0021D9C9AD005468C5 /* MovieDetailsView.xib in Resources */,
-				5A669D7621D730490021277D /* Main.storyboard in Resources */,
+				5A9E1C0421DAA9E7005468C5 /* MoviesSearchingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,28 +285,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9E1C0D21DBCF3A005468C5 /* UIApplication.swift in Sources */,
 				5A669D9921D7EFE70021277D /* MovieCell.swift in Sources */,
 				5A669D8B21D7602B0021277D /* MovieModel.swift in Sources */,
 				5A9E1C0221D9D080005468C5 /* MovieDetailsView.swift in Sources */,
+				5A9E1C0B21DB5B2C005468C5 /* UserDefaults.swift in Sources */,
+				5A9E1C0821DB4200005468C5 /* WatchlistCell.swift in Sources */,
 				5A669D8621D740B30021277D /* MediasSearchController.swift in Sources */,
-				5A669D7321D730490021277D /* ViewController.swift in Sources */,
 				5A669D7121D730490021277D /* AppDelegate.swift in Sources */,
 				5A669D8E21D7B1FE0021277D /* APIService.swift in Sources */,
 				5A669D8321D73A940021277D /* MainTabBarController.swift in Sources */,
+				5A9E1C0621DB3A39005468C5 /* WatchlistController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5A669D7421D730490021277D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A669D7521D730490021277D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A669D7921D730490021277D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

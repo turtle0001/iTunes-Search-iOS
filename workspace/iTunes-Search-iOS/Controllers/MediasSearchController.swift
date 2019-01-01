@@ -12,7 +12,7 @@ import Alamofire
 class MediasSearchController: UITableViewController, UISearchBarDelegate {
   
   var movies = [MovieModel]()
-  
+  var timer: Timer?
   let cellId = "cellId"
   
   // lets implement a UISearchController
@@ -28,6 +28,7 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
   //MARK:- Setup Work
   
   fileprivate func setupSearchBar() {
+    self.definesPresentationContext = true
     navigationItem.searchController = searchController
     navigationItem.hidesSearchBarWhenScrolling = false
     searchController.dimsBackgroundDuringPresentation = false
@@ -35,11 +36,17 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
   }
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    APIService.shared.fetchMovies(searchText: searchText) { (movies) in
-      
-      self.movies = movies
-      self.tableView.reloadData()
-    }
+    movies = []
+    tableView.reloadData()
+    
+    timer?.invalidate()
+    timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (timer) in
+      APIService.shared.fetchMovies(searchText: searchText) { (movies) in
+        
+        self.movies = movies
+        self.tableView.reloadData()
+      }
+    })
   }
   
   struct SearchResults: Decodable {
@@ -53,8 +60,8 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
     tableView.register(nib, forCellReuseIdentifier: cellId)
   }
   
-  
   //MARK:- UITableView
+  
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let movie = self.movies[indexPath.row]
     
@@ -84,7 +91,7 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 116
   }
-    
+  
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel()
     label.text = "Please enter a Movie Search Term"
@@ -96,18 +103,13 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return movies.count > 0 ? 0 : 250
   }
+  
+  var moviesSearchingView = Bundle.main.loadNibNamed("MoviesSearchingView", owner: self, options: nil)?.first as? UIView
+  override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    return moviesSearchingView
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return movies.isEmpty && searchController.searchBar.text?.isEmpty == false ? 200 : 0
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
