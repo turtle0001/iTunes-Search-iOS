@@ -25,15 +25,33 @@
                                 <constraint firstAttribute="width" secondItem="Yox-RV-oTp" secondAttribute="height" id="AT5-Dq-gTy"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqF-1U-KCq">
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BZa-tf-vaf">
                             <rect key="frame" x="0.0" y="331" width="327" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqF-1U-KCq">
+                                    <rect key="frame" x="0.0" y="0.0" width="275" height="44"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fo-4g-W0b">
+                                    <rect key="frame" x="283" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="nkn-Vc-mMv"/>
+                                        <constraint firstAttribute="height" constant="44" id="oC7-ad-PwC"/>
+                                    </constraints>
+                                    <state key="normal" title="Button" image="watchlist"/>
+                                    <connections>
+                                        <action selector="addToWatchlistButton:" destination="i4s-Ut-l8N" eventType="touchUpInside" id="FBI-jr-nU6"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="mLC-lm-T96"/>
+                                <constraint firstAttribute="trailing" secondItem="0Fo-4g-W0b" secondAttribute="trailing" id="fgq-PY-c2v"/>
+                                <constraint firstAttribute="trailing" secondItem="0Fo-4g-W0b" secondAttribute="trailing" id="rtx-DO-9G8"/>
+                                <constraint firstAttribute="height" constant="44" id="xXX-Ax-jmM"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </stackView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhZ-qW-pG5">
                             <rect key="frame" x="0.0" y="379" width="327" height="184"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +67,7 @@
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                             <state key="normal" title="Dismiss"/>
                             <connections>
-                                <action selector="handleDismiss:" destination="i4s-Ut-l8N" eventType="touchUpInside" id="DMe-wb-JEy"/>
+                                <action selector="handleDismissButton:" destination="i4s-Ut-l8N" eventType="touchUpInside" id="kF9-de-gw3"/>
                             </connections>
                         </button>
                     </subviews>
@@ -67,11 +85,13 @@
                 <outlet property="descriptionTextView" destination="HhZ-qW-pG5" id="gk0-0C-Gro"/>
                 <outlet property="thumbnailImageView" destination="Yox-RV-oTp" id="tqu-4f-0fW"/>
                 <outlet property="titleLabel" destination="YqF-1U-KCq" id="h5S-23-ztT"/>
+                <outlet property="watchListButtonItem" destination="0Fo-4g-W0b" id="zve-Cw-NWU"/>
             </connections>
             <point key="canvasLocation" x="290" y="-323"/>
         </view>
     </objects>
     <resources>
         <image name="movie" width="512" height="512"/>
+        <image name="watchlist" width="87" height="87"/>
     </resources>
 </document>

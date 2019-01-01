@@ -8,7 +8,20 @@
 
 import Foundation
 
-struct MovieModel: Decodable {
+class MovieModel: NSObject, Decodable, NSCoding {
+  
+  func encode(with aCoder: NSCoder) {
+    aCoder.encode(trackName ?? "", forKey: "trackNameKey")
+    aCoder.encode(primaryGenreName ?? "", forKey: "primaryGenreNameKey")
+    aCoder.encode(artworkUrl100 ?? "", forKey: "artworkKey")
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    self.trackName = aDecoder.decodeObject(forKey: "trackNameKey") as? String
+    self.primaryGenreName = aDecoder.decodeObject(forKey: "primaryGenreNameKey") as? String
+    self.artworkUrl100 = aDecoder.decodeObject(forKey: "artworkKey") as? String
+  }
+
   var trackName: String?
   var primaryGenreName: String?
   var artworkUrl100: String?
@@ -16,3 +29,6 @@ struct MovieModel: Decodable {
   var longDescription: String?
   
 }
+
+
+
