@@ -12,7 +12,7 @@ import Alamofire
 class MediasSearchController: UITableViewController, UISearchBarDelegate {
   
   var movies = [MovieModel]()
-  
+  var timer: Timer?
   let cellId = "cellId"
   
   // lets implement a UISearchController
@@ -35,10 +35,7 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
     searchController.searchBar.delegate = self
   }
   
-  var timer: Timer?
-  
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    
     movies = []
     tableView.reloadData()
     
@@ -62,7 +59,6 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
     let nib = UINib(nibName: "MovieCell", bundle: nil)
     tableView.register(nib, forCellReuseIdentifier: cellId)
   }
-  
   
   //MARK:- UITableView
   
@@ -95,7 +91,7 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 116
   }
-    
+  
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel()
     label.text = "Please enter a Movie Search Term"
@@ -117,17 +113,3 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
     return movies.isEmpty && searchController.searchBar.text?.isEmpty == false ? 200 : 0
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2ECE75B3A7FA25D39D5D4591 /* Pods_iTunes_Search_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C1F3E1907EAC8F2791D45 /* Pods_iTunes_Search_iOS.framework */; };
 		5A669D7121D730490021277D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A669D7021D730490021277D /* AppDelegate.swift */; };
-		5A669D7321D730490021277D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A669D7221D730490021277D /* ViewController.swift */; };
-		5A669D7621D730490021277D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A669D7421D730490021277D /* Main.storyboard */; };
 		5A669D7821D730490021277D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A669D7721D730490021277D /* Assets.xcassets */; };
 		5A669D7B21D730490021277D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A669D7921D730490021277D /* LaunchScreen.storyboard */; };
 		5A669D8321D73A940021277D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A669D8221D73A940021277D /* MainTabBarController.swift */; };
@@ -32,8 +30,6 @@
 		23B0A62A35F4FAC64098F29D /* Pods-iTunes-Search-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes-Search-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes-Search-iOS/Pods-iTunes-Search-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5A669D6D21D730490021277D /* iTunes-Search-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes-Search-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A669D7021D730490021277D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A669D7221D730490021277D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5A669D7521D730490021277D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A669D7721D730490021277D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A669D7A21D730490021277D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A669D7C21D730490021277D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +98,6 @@
 			children = (
 				5A669D8221D73A940021277D /* MainTabBarController.swift */,
 				5A669D8521D740B30021277D /* MediasSearchController.swift */,
-				5A669D7221D730490021277D /* ViewController.swift */,
 				5A9E1C0521DB3A39005468C5 /* WatchlistController.swift */,
 			);
 			path = Controllers;
@@ -141,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				5A669D7021D730490021277D /* AppDelegate.swift */,
-				5A669D7421D730490021277D /* Main.storyboard */,
 				5A669D7721D730490021277D /* Assets.xcassets */,
 				5A669D7921D730490021277D /* LaunchScreen.storyboard */,
 				5A669D7C21D730490021277D /* Info.plist */,
@@ -240,7 +234,6 @@
 				5A669D9A21D7EFE70021277D /* MovieCell.xib in Resources */,
 				5A9E1C0021D9C9AD005468C5 /* MovieDetailsView.xib in Resources */,
 				5A9E1C0421DAA9E7005468C5 /* MoviesSearchingView.xib in Resources */,
-				5A669D7621D730490021277D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +292,6 @@
 				5A9E1C0B21DB5B2C005468C5 /* UserDefaults.swift in Sources */,
 				5A9E1C0821DB4200005468C5 /* WatchlistCell.swift in Sources */,
 				5A669D8621D740B30021277D /* MediasSearchController.swift in Sources */,
-				5A669D7321D730490021277D /* ViewController.swift in Sources */,
 				5A669D7121D730490021277D /* AppDelegate.swift in Sources */,
 				5A669D8E21D7B1FE0021277D /* APIService.swift in Sources */,
 				5A669D8321D73A940021277D /* MainTabBarController.swift in Sources */,
@@ -310,14 +302,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5A669D7421D730490021277D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A669D7521D730490021277D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A669D7921D730490021277D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

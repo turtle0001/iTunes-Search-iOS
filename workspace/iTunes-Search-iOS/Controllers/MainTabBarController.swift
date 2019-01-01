@@ -14,7 +14,7 @@ class MainTabBarController: UITabBarController {
     super.viewDidLoad()
     
     view.backgroundColor = .white
-    
+  
     UINavigationBar.appearance().prefersLargeTitles = true
     
     tabBar.tintColor = .black
@@ -31,7 +31,6 @@ class MainTabBarController: UITabBarController {
     viewControllers = [
       generateNavigationController(for: MediasSearchController(), title: "Search", image: #imageLiteral(resourceName: "search")),
       generateNavigationController(for: watchlistController, title: "Watchlist", image: #imageLiteral(resourceName: "favorites"))
-//      generateNavigationController(for: ViewController(), title: "Downloads", image: #imageLiteral(resourceName: "downloads"))
     ]
   }
   

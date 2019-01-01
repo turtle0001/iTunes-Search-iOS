@@ -17,8 +17,6 @@ class APIService {
   static let shared = APIService()
   
   func fetchMovies(searchText: String, completionHandler: @escaping ([MovieModel]) -> ()) {
-//    print("Searching for movies...")
-    
     let parameters = ["term": searchText, "media": "movie"]
     
     Alamofire.request(baseiTunesSearchURL, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseData { (dataResponse) in
@@ -33,7 +31,6 @@ class APIService {
         let searchResult = try JSONDecoder().decode(SearchResults.self, from: data)
         print(searchResult.resultCount)
         completionHandler(searchResult.results)
-        
       } catch let decodeErr {
         print("Failed to decode:", decodeErr)
       }

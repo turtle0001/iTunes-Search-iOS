@@ -50,9 +50,6 @@ class MovieDetailsView: UIView {
      watchListButtonItem.setImage(UIImage(named: "heart"), for: .normal)
   }
   
-  
-  
-
   fileprivate func showBadgeHighlight() {
     UIApplication.mainTabBarController()?.viewControllers?[1].tabBarItem.badgeValue = "New"
   }
