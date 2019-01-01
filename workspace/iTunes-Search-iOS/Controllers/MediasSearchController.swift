@@ -11,10 +11,7 @@ import Alamofire
 
 class MediasSearchController: UITableViewController, UISearchBarDelegate {
   
-  var movies = [
-    MovieModel(trackName: "Sample movie 1", artistName: "Joash"),
-    MovieModel(trackName: "Sample movie 2", artistName: "Tubaga"),
-    ]
+  var movies = [MovieModel]()
   
   let cellId = "cellId"
   
@@ -51,24 +48,53 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
   }
   
   fileprivate func setupTableView() {
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+    tableView.tableFooterView = UIView()
+    let nib = UINib(nibName: "MovieCell", bundle: nil)
+    tableView.register(nib, forCellReuseIdentifier: cellId)
   }
   
+  
   //MARK:- UITableView
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let movie = self.movies[indexPath.row]
+    
+    let window = UIApplication.shared.keyWindow
+    
+    let movieDetailsView = Bundle.main.loadNibNamed("MovieDetailsView", owner: self, options: nil)?.first as! MovieDetailsView
+    
+    movieDetailsView.movie = movie
+    
+    movieDetailsView.frame = self.view.frame
+    window?.addSubview(movieDetailsView)
+  }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return movies.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-    
+    let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieCell
     let movie = self.movies[indexPath.row]
-    cell.textLabel?.text = "\(movie.trackName ?? "")\n\(movie.artistName ?? "")"
-    cell.textLabel?.numberOfLines = -1
-    cell.imageView?.image = #imageLiteral(resourceName: "appicon")
+    
+    cell.movie = movie
     
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 116
+  }
+    
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let label = UILabel()
+    label.text = "Please enter a Movie Search Term"
+    label.textAlignment = .center
+    label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+    return label
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return movies.count > 0 ? 0 : 250
   }
 }
 

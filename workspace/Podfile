@@ -7,5 +7,6 @@ target 'iTunes-Search-iOS' do
 
   # Pods for iTunes-Search-iOS
   pod 'Alamofire'
+  pod 'SDWebImage', '~> 4.0'
 
 end

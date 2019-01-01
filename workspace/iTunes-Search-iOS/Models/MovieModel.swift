@@ -10,5 +10,9 @@ import Foundation
 
 struct MovieModel: Decodable {
   var trackName: String?
-  var artistName: String?
+  var primaryGenreName: String?
+  var artworkUrl100: String?
+  var trackPrice: Double?
+  var longDescription: String?
+  
 }
