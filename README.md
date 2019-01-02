@@ -5,6 +5,10 @@ Appetiser Mobile Coding Challenge
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+
+![](README%20Assets/Sample.gif)
+
+
 ### Requirements
 ```
 iOS 10.0+ / macOS 10.12+ / tvOS 10.0+ / watchOS 3.0+
