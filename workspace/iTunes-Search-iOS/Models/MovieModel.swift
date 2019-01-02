@@ -14,12 +14,14 @@ class MovieModel: NSObject, Decodable, NSCoding {
     aCoder.encode(trackName ?? "", forKey: "trackNameKey")
     aCoder.encode(primaryGenreName ?? "", forKey: "primaryGenreNameKey")
     aCoder.encode(artworkUrl100 ?? "", forKey: "artworkKey")
+    aCoder.encode(longDescription ?? "", forKey: "longDescripKey")
   }
   
   required init?(coder aDecoder: NSCoder) {
     self.trackName = aDecoder.decodeObject(forKey: "trackNameKey") as? String
     self.primaryGenreName = aDecoder.decodeObject(forKey: "primaryGenreNameKey") as? String
     self.artworkUrl100 = aDecoder.decodeObject(forKey: "artworkKey") as? String
+    self.longDescription = aDecoder.decodeObject(forKey: "longDescripKey") as? String
   }
 
   var trackName: String?
