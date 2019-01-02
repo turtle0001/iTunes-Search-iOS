@@ -46,4 +46,11 @@ In this project I tried to follow all the requirements based on the document App
 
 * [Appetiser Mobile Coding Challenge](https://paper.dropbox.com/doc/Appetiser-Mobile-Coding-Challenge--AUkAzIn5_CxesHwwCHL_IMXIAg-CXlFaaY0PLqbl03RkHqkg)
 
-The project composed of 2 main tabs the Search and the Watchlist. 
+For this project I used the MVC architecture pattern and userdefaults to save local copy of all the items on the watchlist tab once the user decided to close the application. I also used Alamofire to handle the network request and SDWebImage Library to handle the image caching. This is the only 3rd party dependency I used for this project.
+
+Also I didn't use the Mainstoryboard for this project, just to showoff 🤣. I used XIB files to make some of the UI views and bind them programmatically. 
+
+
+
+
+
