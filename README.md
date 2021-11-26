@@ -1,5 +1,5 @@
 # -iTunes-Search
-Appetiser Mobile Coding Challenge
+Kumu Mobile Coding Challenge
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ pod install
 
 ```
 develop
-release-1.0
+release-2.0
 ```
 
 3. Build and run
@@ -44,9 +44,9 @@ release-1.0
 
 In this project I tried to follow all the requirements based on the document Appetiser Provided:
 
-* [Appetiser Mobile Coding Challenge](https://paper.dropbox.com/doc/Appetiser-Mobile-Coding-Challenge--AUkAzIn5_CxesHwwCHL_IMXIAg-CXlFaaY0PLqbl03RkHqkg)
+* [Kumu Mobile Coding Challenge](https://drive.google.com/file/d/1lWW3X-xdRxvhtR54LbHLKh8b8nPgDlWB/view?usp=sharing)
 
-For this project I used the MVC architecture pattern and userdefaults to save local copy of all the items on the watchlist tab once the user decided to close the application. I also used Alamofire to handle the network request and SDWebImage Library to handle the image caching. This is the only 3rd party dependency I used for this project.
+For this project I updated the architecture pattern to use MVVM but but not able to finish it. I also use userdefaults to save local copy of all the items on the watchlist tab once the user decided to close the application. I also used Alamofire to handle the network request and SDWebImage Library to handle the image caching. This is the only 3rd party dependency I used for this project.
 
 Also I didn't use the Mainstoryboard for this project, just to showoff 🤣. I used XIB files to make some of the UI views and bind them programmatically. 
 
