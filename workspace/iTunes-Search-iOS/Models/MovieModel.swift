@@ -9,6 +9,11 @@
 import Foundation
 
 class MovieModel: NSObject, Decodable, NSCoding {
+  var trackName: String?
+  var primaryGenreName: String?
+  var artworkUrl100: String?
+  var trackPrice: Double?
+  var longDescription: String?
   
   func encode(with aCoder: NSCoder) {
     aCoder.encode(trackName ?? "", forKey: "trackNameKey")
@@ -24,11 +29,6 @@ class MovieModel: NSObject, Decodable, NSCoding {
     self.longDescription = aDecoder.decodeObject(forKey: "longDescripKey") as? String
   }
 
-  var trackName: String?
-  var primaryGenreName: String?
-  var artworkUrl100: String?
-  var trackPrice: Double?
-  var longDescription: String?
   
 }
 

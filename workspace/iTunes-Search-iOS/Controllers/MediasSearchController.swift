@@ -69,7 +69,8 @@ class MediasSearchController: UITableViewController, UISearchBarDelegate {
     
     let movieDetailsView = Bundle.main.loadNibNamed("MovieDetailsView", owner: self, options: nil)?.first as! MovieDetailsView
     
-    movieDetailsView.movie = movie
+    // Need to transfer to VM
+    movieDetailsView.viewModel = MovieDetailsViewModel(movie: movie)
     
     movieDetailsView.frame = self.view.frame
     window?.addSubview(movieDetailsView)

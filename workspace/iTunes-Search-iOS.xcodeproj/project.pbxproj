@@ -24,6 +24,12 @@
 		5A9E1C0821DB4200005468C5 /* WatchlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0721DB4200005468C5 /* WatchlistCell.swift */; };
 		5A9E1C0B21DB5B2C005468C5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0A21DB5B2C005468C5 /* UserDefaults.swift */; };
 		5A9E1C0D21DBCF3A005468C5 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E1C0C21DBCF3A005468C5 /* UIApplication.swift */; };
+		A1C987BC274CA5B000E93962 /* WatchlistCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C987BB274CA5B000E93962 /* WatchlistCellViewModelProtocol.swift */; };
+		A1C987BE274CA73C00E93962 /* WatchlistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C987BD274CA73C00E93962 /* WatchlistCellViewModel.swift */; };
+		A1C987C0274CA82B00E93962 /* WatchlistViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C987BF274CA82B00E93962 /* WatchlistViewModelProtocol.swift */; };
+		A1C987C2274CA8D500E93962 /* WatchlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C987C1274CA8D500E93962 /* WatchlistViewModel.swift */; };
+		A1C987C5274CAA5100E93962 /* MovieDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C987C4274CAA5100E93962 /* MovieDetailsViewModelProtocol.swift */; };
+		A1C987C7274CAA8100E93962 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C987C6274CAA8100E93962 /* MovieDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,12 @@
 		5A9E1C0A21DB5B2C005468C5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		5A9E1C0C21DBCF3A005468C5 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		8C85C3F89C99A9E8E4F3D082 /* Pods-iTunes-Search-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunes-Search-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTunes-Search-iOS/Pods-iTunes-Search-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A1C987BB274CA5B000E93962 /* WatchlistCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		A1C987BD274CA73C00E93962 /* WatchlistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistCellViewModel.swift; sourceTree = "<group>"; };
+		A1C987BF274CA82B00E93962 /* WatchlistViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewModelProtocol.swift; sourceTree = "<group>"; };
+		A1C987C1274CA8D500E93962 /* WatchlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewModel.swift; sourceTree = "<group>"; };
+		A1C987C4274CAA5100E93962 /* MovieDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
+		A1C987C6274CAA8100E93962 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		DF0C1F3E1907EAC8F2791D45 /* Pods_iTunes_Search_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunes_Search_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,7 +110,7 @@
 			children = (
 				5A669D8221D73A940021277D /* MainTabBarController.swift */,
 				5A669D8521D740B30021277D /* MediasSearchController.swift */,
-				5A9E1C0521DB3A39005468C5 /* WatchlistController.swift */,
+				A1C987B9274CA48F00E93962 /* Watchlist */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,10 +136,8 @@
 			children = (
 				5A669D9821D7EFE70021277D /* MovieCell.xib */,
 				5A669D9721D7EFE70021277D /* MovieCell.swift */,
-				5A9E1BFF21D9C9AD005468C5 /* MovieDetailsView.xib */,
-				5A9E1C0121D9D080005468C5 /* MovieDetailsView.swift */,
 				5A9E1C0321DAA9E7005468C5 /* MoviesSearchingView.xib */,
-				5A9E1C0721DB4200005468C5 /* WatchlistCell.swift */,
+				A1C987C3274CAA1100E93962 /* MovieDetails */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +160,38 @@
 				5A9E1C0C21DBCF3A005468C5 /* UIApplication.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A1C987B9274CA48F00E93962 /* Watchlist */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1C0521DB3A39005468C5 /* WatchlistController.swift */,
+				A1C987C1274CA8D500E93962 /* WatchlistViewModel.swift */,
+				A1C987BF274CA82B00E93962 /* WatchlistViewModelProtocol.swift */,
+				A1C987BA274CA4B100E93962 /* Views */,
+			);
+			path = Watchlist;
+			sourceTree = "<group>";
+		};
+		A1C987BA274CA4B100E93962 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1C0721DB4200005468C5 /* WatchlistCell.swift */,
+				A1C987BD274CA73C00E93962 /* WatchlistCellViewModel.swift */,
+				A1C987BB274CA5B000E93962 /* WatchlistCellViewModelProtocol.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1C987C3274CAA1100E93962 /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5A9E1BFF21D9C9AD005468C5 /* MovieDetailsView.xib */,
+				5A9E1C0121D9D080005468C5 /* MovieDetailsView.swift */,
+				A1C987C6274CAA8100E93962 /* MovieDetailsViewModel.swift */,
+				A1C987C4274CAA5100E93962 /* MovieDetailsViewModelProtocol.swift */,
+			);
+			path = MovieDetails;
 			sourceTree = "<group>";
 		};
 		A202C41AB99A2577720643EA /* Pods */ = {
@@ -285,15 +327,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C987BC274CA5B000E93962 /* WatchlistCellViewModelProtocol.swift in Sources */,
 				5A9E1C0D21DBCF3A005468C5 /* UIApplication.swift in Sources */,
+				A1C987C5274CAA5100E93962 /* MovieDetailsViewModelProtocol.swift in Sources */,
+				A1C987C2274CA8D500E93962 /* WatchlistViewModel.swift in Sources */,
 				5A669D9921D7EFE70021277D /* MovieCell.swift in Sources */,
 				5A669D8B21D7602B0021277D /* MovieModel.swift in Sources */,
+				A1C987C0274CA82B00E93962 /* WatchlistViewModelProtocol.swift in Sources */,
 				5A9E1C0221D9D080005468C5 /* MovieDetailsView.swift in Sources */,
 				5A9E1C0B21DB5B2C005468C5 /* UserDefaults.swift in Sources */,
+				A1C987C7274CAA8100E93962 /* MovieDetailsViewModel.swift in Sources */,
 				5A9E1C0821DB4200005468C5 /* WatchlistCell.swift in Sources */,
 				5A669D8621D740B30021277D /* MediasSearchController.swift in Sources */,
 				5A669D7121D730490021277D /* AppDelegate.swift in Sources */,
 				5A669D8E21D7B1FE0021277D /* APIService.swift in Sources */,
+				A1C987BE274CA73C00E93962 /* WatchlistCellViewModel.swift in Sources */,
 				5A669D8321D73A940021277D /* MainTabBarController.swift in Sources */,
 				5A9E1C0621DB3A39005468C5 /* WatchlistController.swift in Sources */,
 			);
